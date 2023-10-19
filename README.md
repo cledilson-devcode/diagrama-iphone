@@ -38,6 +38,8 @@ classDiagram
         - String titulo
         - String artista
         - int duracao
+        + Musica(String titulo, String artista, int duracao)
+        + getTitulo()
     }
 
     Iphone --> ReprodutorMusical
