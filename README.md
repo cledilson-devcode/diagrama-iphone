@@ -12,27 +12,23 @@ classDiagram
         - ReprodutorMusical reprodutorMusical
         - AparelhoTelefonico aparelhoTelefonico
         - NavegadorInternet navegadorInternet
-        --
         + ligar()
         + desligar()
     }
 
     class ReprodutorMusical {
-        --
         + tocar()
         + pausar()
         + selecionarMusica(Musica musica)
     }
 
     class AparelhoTelefonico {
-        --
         + ligar()
         + atender()
         + iniciarCorreioVoz()
     }
 
     class NavegadorInternet {
-        --
         + exibirPagina(String url)
         + adicionarNovaAba()
         + atualizarPagina()
