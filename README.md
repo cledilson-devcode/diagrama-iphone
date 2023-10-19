@@ -7,32 +7,46 @@ Este projeto representa a modelagem e a implementação básica do componente iP
 ```mermaid
 classDiagram
     class Iphone {
-        + String modelo
-        + String cor
-        + ReprodutorMusical reprodutorMusical
-        + AparelhoTelefonico aparelhoTelefonico
-        + NavegadorInternet navegadorInternet
+        - String modelo
+        - String cor
+        - ReprodutorMusical reprodutorMusical
+        - AparelhoTelefonico aparelhoTelefonico
+        - NavegadorInternet navegadorInternet
         --
         + ligar()
         + desligar()
     }
 
-    interface ReprodutorMusical {
+    class ReprodutorMusical {
+        --
         + tocar()
         + pausar()
-        + selecionarMusica(String musica)
+        + selecionarMusica(Musica musica)
     }
 
-    interface AparelhoTelefonico {
+    class AparelhoTelefonico {
+        --
         + ligar()
         + atender()
         + iniciarCorreioVoz()
     }
 
-    interface NavegadorInternet {
+    class NavegadorInternet {
+        --
         + exibirPagina(String url)
         + adicionarNovaAba()
         + atualizarPagina()
     }
 
+    class Musica {
+        - String titulo
+        - String artista
+        - int duracao
+    }
+
+    Iphone --> ReprodutorMusical
+    Iphone --> AparelhoTelefonico
+    Iphone --> NavegadorInternet
+    ReprodutorMusical --> Musica
+    NavegadorInternet --> Musica
 ```
